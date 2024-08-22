@@ -1,0 +1,52 @@
+    <!-- Import Base,html -->
+{% extends 'core/base.html' %}
+
+<!-- Import title for change title -->
+{% block title %}
+    Home
+{% endblock title %}
+    
+
+<!-- Import main_content for change the body of home page  -->
+{% block main_content %}
+<section class="flex-container">
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-8 border">
+            <h3>CRUD Projects in django </h3>
+        </div>
+
+        <div class="row justify-content-around mt-4">
+            <div class="col-sm-8">
+                <a href="#" class="btn btn-primary float-end"> Add </a>
+            </div>
+        </div>
+
+    <div class="row justify-content-around text-white mt-1">
+        <div class="col-sm-8">
+            <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Roll</th>
+                        <th scope="col">City</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for stud in studata %}
+                        <tr>
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td>{{stud.name}}</td>
+                            <td>{{stud.roll}}</td>
+                            <td>{{stud.city}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+{% endblock main_content %}
+    
